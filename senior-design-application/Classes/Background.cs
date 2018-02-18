@@ -26,7 +26,7 @@ namespace senior_design_application.Classes
             BluetoothClient client = new BluetoothClient();
             MessageBox.Show("Attempting to connect as client.");
 
-
+            //Comment
             return false;
         }
 
