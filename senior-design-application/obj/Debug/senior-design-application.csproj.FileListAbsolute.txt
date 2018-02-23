@@ -13,3 +13,11 @@ C:\Users\corey_000\Source\Repos\senior-design-application\senior-design-applicat
 C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\bin\Debug\senior-design-application.exe.config
 C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior-design-application.exe
 C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior-design-application.pdb
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\bin\Debug\senior-design-application.exe
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\bin\Debug\senior-design-application.pdb
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\bin\Debug\InTheHand.Net.Personal.dll
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\bin\Debug\InTheHand.Net.Personal.xml
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior-design-application.csprojResolveAssemblyReference.cache
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior_design_application.Form1.resources
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior_design_application.Properties.Resources.resources
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior-design-application.csproj.GenerateResource.Cache

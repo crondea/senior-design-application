@@ -9,6 +9,7 @@ using InTheHand.Net.Ports;
 using InTheHand.Net.Sockets;
 using System.IO;
 using System.Windows.Forms;
+using System.Net.Sockets;
 
 namespace senior_design_application.Classes
 {
@@ -26,7 +27,7 @@ namespace senior_design_application.Classes
             BluetoothClient client = new BluetoothClient();
             MessageBox.Show("Attempting to connect as client.");
 
-            //Comment
+            
             return false;
         }
 
