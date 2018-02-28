@@ -211,9 +211,6 @@
         private System.Windows.Forms.Button buttonKickstand;
         private System.Windows.Forms.Button buttonShutdown;
         private System.Windows.Forms.Button buttonStartup;
-        private System.Windows.Forms.DataGridView dataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fields;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
         private System.Windows.Forms.Button buttonUpdateTable;
         private System.Windows.Forms.Button buttonForward;
         private System.Windows.Forms.Button buttonRightTurn;

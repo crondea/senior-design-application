@@ -25,10 +25,11 @@ namespace senior_design_application
         /// <param name="e"></param>
         private void buttonStartup_Click(object sender, EventArgs e)
         {
-            if (Background.connectAsClient() == false)
-            {
-                // Connection failed
-            }
+            //if (Background.connectAsClient() == false)
+            //{
+            //    // Connection failed
+            //}
+
         }
 
         private void buttonShutdown_Click(object sender, EventArgs e)
@@ -52,23 +53,23 @@ namespace senior_design_application
         }
 
         private void buttonForward_Click(object sender, EventArgs e)
-        {
-
+        { 
+            Background.SendMessage("_forward");
         }
 
         private void buttonBackward_Click(object sender, EventArgs e)
         {
-
+            Background.SendMessage("backward");
         }
 
         private void buttonRightTurn_Click(object sender, EventArgs e)
         {
-
+            Background.SendMessage("right_turn");
         }
 
         private void buttonLeftTurn_Click(object sender, EventArgs e)
         {
-
+            Background.SendMessage("_left_turn");
         }
     }
 }
