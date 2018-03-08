@@ -39,19 +39,19 @@
             this.buttonRightTurn = new System.Windows.Forms.Button();
             this.buttonLeftTurn = new System.Windows.Forms.Button();
             this.buttonBackward = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // logoPB
             // 
-            this.logoPB.ImageLocation = "C:\\Users\\corey_000\\Documents\\Visual Studio 2017\\SDImage.JPG";
+            this.logoPB.ImageLocation = "C:\\Users\\Corey Rondeau\\Source\\Repos\\senior-design-application\\senior-design-appli" +
+    "cation\\Images\\50073.jpg";
             this.logoPB.Location = new System.Drawing.Point(53, 22);
             this.logoPB.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.logoPB.Name = "logoPB";
-            this.logoPB.Size = new System.Drawing.Size(1568, 254);
-            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.logoPB.Size = new System.Drawing.Size(919, 509);
+            this.logoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.logoPB.TabIndex = 0;
             this.logoPB.TabStop = false;
             // 
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.buttonKickstand);
             this.groupBox1.Controls.Add(this.buttonShutdown);
             this.groupBox1.Controls.Add(this.buttonStartup);
-            this.groupBox1.Location = new System.Drawing.Point(53, 288);
+            this.groupBox1.Location = new System.Drawing.Point(25, 552);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -139,7 +139,7 @@
             // buttonForward
             // 
             this.buttonForward.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonForward.Location = new System.Drawing.Point(612, 328);
+            this.buttonForward.Location = new System.Drawing.Point(584, 592);
             this.buttonForward.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonForward.Name = "buttonForward";
             this.buttonForward.Size = new System.Drawing.Size(160, 108);
@@ -151,7 +151,7 @@
             // buttonRightTurn
             // 
             this.buttonRightTurn.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonRightTurn.Location = new System.Drawing.Point(840, 452);
+            this.buttonRightTurn.Location = new System.Drawing.Point(812, 716);
             this.buttonRightTurn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonRightTurn.Name = "buttonRightTurn";
             this.buttonRightTurn.Size = new System.Drawing.Size(160, 108);
@@ -163,7 +163,7 @@
             // buttonLeftTurn
             // 
             this.buttonLeftTurn.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonLeftTurn.Location = new System.Drawing.Point(408, 452);
+            this.buttonLeftTurn.Location = new System.Drawing.Point(380, 716);
             this.buttonLeftTurn.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonLeftTurn.Name = "buttonLeftTurn";
             this.buttonLeftTurn.Size = new System.Drawing.Size(160, 108);
@@ -175,7 +175,7 @@
             // buttonBackward
             // 
             this.buttonBackward.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonBackward.Location = new System.Drawing.Point(612, 575);
+            this.buttonBackward.Location = new System.Drawing.Point(584, 839);
             this.buttonBackward.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.buttonBackward.Name = "buttonBackward";
             this.buttonBackward.Size = new System.Drawing.Size(160, 108);
@@ -184,23 +184,12 @@
             this.buttonBackward.UseVisualStyleBackColor = false;
             this.buttonBackward.Click += new System.EventHandler(this.buttonBackward_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(1060, 325);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(560, 379);
-            this.listBox1.TabIndex = 8;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
-            this.ClientSize = new System.Drawing.Size(1693, 765);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(1014, 1049);
             this.Controls.Add(this.buttonBackward);
             this.Controls.Add(this.buttonLeftTurn);
             this.Controls.Add(this.buttonRightTurn);
@@ -229,7 +218,6 @@
         private System.Windows.Forms.Button buttonLeftTurn;
         private System.Windows.Forms.Button buttonBackward;
         private System.Windows.Forms.Button buttonEStop;
-        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
