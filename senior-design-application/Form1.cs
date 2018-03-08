@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,33 @@ namespace senior_design_application
         public Form1()
         {
             InitializeComponent();
+
+            
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            switch (keyData)
+            {
+                case Keys.Up:
+                    // Tell the robot to go forward
+                    Background.SendMessage("1");
+                    break;
+                case Keys.Down:
+                    // Tell the robot to go backward
+                    Background.SendMessage("0");
+                    //Probably want to stop then go backward
+                    break;
+                case Keys.Right:
+                    // Tell the robot to turn right
+                    // Probably want to stop then turn right
+                    break;
+                case Keys.Left:
+                    // Tell the robot to turn left
+                    // Probably want to stop then turn left
+                    break;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
         }
 
         /// <summary>
@@ -29,7 +57,6 @@ namespace senior_design_application
             //{
             //    // Connection failed
             //}
-
         }
 
         private void buttonShutdown_Click(object sender, EventArgs e)
@@ -44,32 +71,34 @@ namespace senior_design_application
 
         private void buttonEStop_Click(object sender, EventArgs e)
         {
-
+            Background.SendMessage("estop");
         }
 
         private void buttonUpdateTable_Click(object sender, EventArgs e)
         {
-
+            //Background.GetInfo();
         }
 
         private void buttonForward_Click(object sender, EventArgs e)
-        { 
-            Background.SendMessage("_forward");
+        {
+            Background.SendMessage("1");
         }
 
         private void buttonBackward_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("backward");
+            Background.SendMessage("0");
         }
 
         private void buttonRightTurn_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("right_turn");
+            Background.SendMessage("leftturn");
         }
 
         private void buttonLeftTurn_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("_left_turn");
+            Background.SendMessage("rightturn");
         }
+
+
     }
 }

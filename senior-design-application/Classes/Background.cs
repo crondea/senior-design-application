@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using System.IO.Ports;
 
 namespace senior_design_application.Classes
 {
@@ -33,23 +34,73 @@ namespace senior_design_application.Classes
         //    return false;
         //}
 
-        private const int defaultPort = 51001;
+        //private const int defaultPort = 51001;
+
+        //public static void SendMessage(string message)
+        //{
+        //    IPAddress broadcast = IPAddress.Parse("192.168.0.4");
+        //    byte[] sendbuff = Encoding.ASCII.GetBytes(message);
+        //    IPEndPoint ep = new IPEndPoint(broadcast, defaultPort);
+        //    UdpClient client = new UdpClient();
+        //    int test = 5;
+        //    byte[] dgram = Encoding.ASCII.GetBytes(test.ToString().ToCharArray());
+        //    //MessageBox.Show(Convert.ToInt32(dgram).ToString());
+        //    int i;
+        //    for (i = 0; i < 5; i++)
+        //    {
+        //        client.Send(sendbuff, dgram.Length, ep);
+        //        Thread.Sleep(500);
+        //    }
+        //}
+
+        static SerialPort sp = new SerialPort("COM4");
 
         public static void SendMessage(string message)
         {
-            IPAddress broadcast = IPAddress.Parse("192.168.0.4");
-            byte[] sendbuff = Encoding.ASCII.GetBytes(message);
-            IPEndPoint ep = new IPEndPoint(broadcast, defaultPort);
-            UdpClient client = new UdpClient();
-            int test = 5;
-            byte[] dgram = Encoding.ASCII.GetBytes(test.ToString().ToCharArray());
-            //MessageBox.Show(Convert.ToInt32(dgram).ToString());
-            int i;
-            for (i = 0; i < 5; i++)
+            StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
+
+            sp.BaudRate = 9600;
+            sp.Parity = Parity.None;
+            sp.StopBits = StopBits.One;
+            sp.DataBits = 8;
+            sp.Handshake = Handshake.None;
+            sp.RtsEnable = true;
+
+            if(sp != null)
             {
-                client.Send(sendbuff, dgram.Length, ep);
-                Thread.Sleep(500);
+                if(sp.IsOpen)
+                {
+                    sp.WriteLine(message);
+                }
+                else
+                {
+                    sp.Open();
+                    sp.ReadTimeout = 1000;
+                    sp.WriteLine(message);
+                }
             }
+            else
+            {
+                if(sp.IsOpen)
+                {
+                    MessageBox.Show("Port is already open");
+                }
+                else
+                {
+                    MessageBox.Show("port == null");
+                }
+            }
+            
+            
+           
+
         }
+
+        public static void OnApplicationQuit()
+        {
+            sp.Close();
+        }
+
+
     }
 }
