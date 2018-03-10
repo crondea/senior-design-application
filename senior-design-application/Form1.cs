@@ -14,11 +14,16 @@ namespace senior_design_application
 {
     public partial class Form1 : Form
     {
+        string[] ports;
+        string desiredPort;
         public Form1()
         {
             InitializeComponent();
-
-            
+            ports = SerialPort.GetPortNames();
+            foreach (string port in ports)
+            {
+                listBoxPorts.Items.Add(port);
+            }
         }
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -27,20 +32,28 @@ namespace senior_design_application
             {
                 case Keys.Up:
                     // Tell the robot to go forward
-                    Background.SendMessage("1");
+                    Background.SendMessage(desiredPort, "1");    // go
                     break;
                 case Keys.Down:
                     // Tell the robot to go backward
-                    Background.SendMessage("0");
                     //Probably want to stop then go backward
+                    Background.SendMessage(desiredPort, "0");    // stop
+                    Background.SendMessage(desiredPort, "2");    // back
                     break;
                 case Keys.Right:
                     // Tell the robot to turn right
                     // Probably want to stop then turn right
+                    Background.SendMessage(desiredPort, "0");    // stop
+                    Background.SendMessage(desiredPort, "3");    // right
                     break;
                 case Keys.Left:
                     // Tell the robot to turn left
                     // Probably want to stop then turn left
+                    Background.SendMessage(desiredPort, "0");    // stop
+                    Background.SendMessage(desiredPort, "4");    // left
+                    break;
+                case Keys.Space:
+                    Background.SendMessage(desiredPort, "0");    // stop
                     break;
             }
             return base.ProcessCmdKey(ref msg, keyData);
@@ -51,17 +64,14 @@ namespace senior_design_application
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void buttonStartup_Click(object sender, EventArgs e)
+        private void buttonConnect_Click(object sender, EventArgs e)
         {
-            //if (Background.connectAsClient() == false)
-            //{
-            //    // Connection failed
-            //}
-        }
-
-        private void buttonShutdown_Click(object sender, EventArgs e)
-        {
-            
+    
+            try
+            {
+                desiredPort = listBoxPorts.SelectedItem.ToString();
+            }
+            catch{}
         }
 
         private void buttonKickstand_Click(object sender, EventArgs e)
@@ -71,32 +81,33 @@ namespace senior_design_application
 
         private void buttonEStop_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("estop");
-        }
-
-        private void buttonUpdateTable_Click(object sender, EventArgs e)
-        {
-            //Background.GetInfo();
+            Background.SendMessage(desiredPort, "0");
         }
 
         private void buttonForward_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("1");
+            MessageBox.Show(desiredPort);
+
+            Background.SendMessage(desiredPort, "1");
         }
 
         private void buttonBackward_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("0");
+            Background.SendMessage(desiredPort, "0");
+            Background.SendMessage(desiredPort, "2");
         }
 
         private void buttonRightTurn_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("leftturn");
+            Background.SendMessage(desiredPort, "0");
+            Background.SendMessage(desiredPort, "3");
         }
 
         private void buttonLeftTurn_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("rightturn");
+            Background.SendMessage(desiredPort, "0");
+            Background.SendMessage(desiredPort, "4");
+
         }
 
 
