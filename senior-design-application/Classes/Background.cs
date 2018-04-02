@@ -18,13 +18,10 @@ namespace senior_design_application.Classes
 {
     public static class Background
     {
-
-
-        //static SerialPort sp = new SerialPort("COM4");
-        static SerialPort sp = new SerialPort();
-        public static void SendMessage(string port, string message)
+        static SerialPort sp;
+        public static void PortSetup(string port)
         {
-            StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
+            sp = new SerialPort();
             sp.PortName = port;
             sp.BaudRate = 9600;
             sp.Parity = Parity.None;
@@ -32,6 +29,12 @@ namespace senior_design_application.Classes
             sp.DataBits = 8;
             sp.Handshake = Handshake.None;
             sp.RtsEnable = true;
+        }
+
+        public static void SendMessage(string message)
+        {
+            StringComparer stringComparer = StringComparer.OrdinalIgnoreCase;
+
             if(sp != null)
             {
                 if(sp.IsOpen)
