@@ -18,6 +18,6 @@ C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-appl
 C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\bin\Debug\InTheHand.Net.Personal.dll
 C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\bin\Debug\InTheHand.Net.Personal.xml
 C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior-design-application.csprojResolveAssemblyReference.cache
-C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior_design_application.Form1.resources
 C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior_design_application.Properties.Resources.resources
 C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior-design-application.csproj.GenerateResource.Cache
+C:\Users\Corey Rondeau\Source\Repos\senior-design-application\senior-design-application\obj\Debug\senior_design_application.Controls.resources

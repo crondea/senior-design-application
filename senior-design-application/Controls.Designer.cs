@@ -39,6 +39,8 @@
             this.buttonLeftTurn = new System.Windows.Forms.Button();
             this.buttonSlowDown = new System.Windows.Forms.Button();
             this.labelConnect = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelCount = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).BeginInit();
             this.groupBoxControls.SuspendLayout();
             this.SuspendLayout();
@@ -177,12 +179,33 @@
             this.labelConnect.TabIndex = 7;
             this.labelConnect.Text = "Select a port and click Connect:";
             // 
-            // Form1
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(354, 451);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 20);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Current Count:";
+            // 
+            // labelCount
+            // 
+            this.labelCount.AutoSize = true;
+            this.labelCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCount.Location = new System.Drawing.Point(511, 451);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(0, 20);
+            this.labelCount.TabIndex = 9;
+            // 
+            // Controls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Teal;
             this.ClientSize = new System.Drawing.Size(760, 958);
+            this.Controls.Add(this.labelCount);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelConnect);
             this.Controls.Add(this.buttonSlowDown);
             this.Controls.Add(this.buttonLeftTurn);
@@ -191,7 +214,7 @@
             this.Controls.Add(this.groupBoxControls);
             this.Controls.Add(this.logoPB);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "Controls";
             this.Text = "Robot Controller";
             ((System.ComponentModel.ISupportInitialize)(this.logoPB)).EndInit();
             this.groupBoxControls.ResumeLayout(false);
@@ -213,6 +236,8 @@
         private System.Windows.Forms.Button buttonEStop;
         private System.Windows.Forms.ListBox listBoxPorts;
         private System.Windows.Forms.Label labelConnect;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelCount;
     }
 }
 

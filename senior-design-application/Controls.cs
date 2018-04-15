@@ -28,26 +28,33 @@ namespace senior_design_application
 
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            int value = 0;
             switch (keyData)
             {
                 case Keys.Up:
                     // Tell the robot to go forward
-                    Background.SendMessage("1");    // speed up
+                    value = Background.countHandler(1);
+                    Background.sendIndex();
+                    labelCount.Text = value.ToString();
                     break;
                 case Keys.Down:
                     // Tell the robot to go backward
-                    Background.SendMessage("2");    // slow down
+                    value = Background.countHandler(-1);
+                    Background.sendIndex();
+                    labelCount.Text = value.ToString();
                     break;
                 case Keys.Right:
                     // Tell the robot to turn right
-                    Background.SendMessage("3");    // right
+                    //Background.SendMessage("3");    // right
                     break;
                 case Keys.Left:
                     // Tell the robot to turn left
-                    Background.SendMessage("4");    // left
+                    //Background.SendMessage("4");    // left
                     break;
                 case Keys.Space:
-                    Background.SendMessage("0");    // stop
+                    value = Background.countHandler(0);
+                    Background.sendIndex();
+                    labelCount.Text = value.ToString();
                     break;
             }
             return base.ProcessCmdKey(ref msg, keyData);
@@ -75,27 +82,33 @@ namespace senior_design_application
 
         private void buttonEStop_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("0");
+            int value = Background.countHandler(0);
+            Background.sendIndex();
+            labelCount.Text = value.ToString();
         }
 
         private void buttonSpeedUp_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("1");
+            int value = Background.countHandler(1);
+            Background.sendIndex();
+            labelCount.Text = value.ToString();
         }
 
         private void buttonSlowDown_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("2");
+            int value = Background.countHandler(-1);
+            Background.sendIndex();
+            labelCount.Text = value.ToString();
         }
 
         private void buttonRightTurn_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("3");
+            //Background.SendMessage("3");
         }
 
         private void buttonLeftTurn_Click(object sender, EventArgs e)
         {
-            Background.SendMessage("4");
+            //Background.SendMessage("4");
         }
     }
 }

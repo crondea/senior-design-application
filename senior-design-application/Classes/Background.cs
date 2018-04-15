@@ -19,6 +19,7 @@ namespace senior_design_application.Classes
     public static class Background
     {
         static SerialPort sp;
+        static int Count = 0;
         public static void PortSetup(string port)
         {
             sp = new SerialPort();
@@ -63,6 +64,37 @@ namespace senior_design_application.Classes
         public static void OnApplicationQuit()
         {
             sp.Close();
+        }
+
+        public static int countHandler(int value)
+        {
+            if (value == 1)
+            {
+                Count = Count + 1;
+            }
+            else if (value == -1)
+            {
+                Count = Count - 1;
+            }
+            else if (value == 0)
+            {
+                Count = 0;
+            }
+
+            if (Count > 3)
+            {
+                Count = 4;
+            }
+            if (Count < -3)
+            {
+                Count = -3;
+            }
+            return Count;
+        }
+
+        public static void sendIndex()
+        {
+            SendMessage(Count.ToString());
         }
     }
 }
