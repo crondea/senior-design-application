@@ -40,20 +40,25 @@ namespace senior_design_application.Classes
             {
                 if(sp.IsOpen)
                 {
+                    
                     sp.WriteLine(message);
                 }
                 else
                 {
                     sp.Open();
-                    sp.ReadTimeout = 1000;
-                    sp.WriteLine(message);
+                    if (sp.IsOpen)
+                    {
+                        MessageBox.Show("Serial Connected");
+                        sp.ReadTimeout = 1000;
+                        sp.WriteLine(message);
+                    }
                 }
             }
             else
             {
-                if(sp.IsOpen)
+                if(!sp.IsOpen)
                 {
-                    MessageBox.Show("Port is already open");
+                    MessageBox.Show("Port is not open");
                 }
                 else
                 {
@@ -81,20 +86,38 @@ namespace senior_design_application.Classes
                 Count = 0;
             }
 
-            if (Count > 3)
+            if (Count > 1)
             {
-                Count = 4;
+                Count = 1;
             }
-            if (Count < -3)
+            if (Count < -1)
             {
-                Count = -3;
+                Count = -1;
             }
             return Count;
         }
 
         public static void sendIndex()
         {
-            SendMessage(Count.ToString());
+            if (Count < 0)
+            {
+                if (Count == -1)
+                {
+                    SendMessage("2");
+                }
+                /*else if (Count == -2)
+                {
+                    SendMessage("5");
+                }
+                else if (Count == -3)
+                {
+                    SendMessage("6");
+                }*/
+            }
+            else
+            {
+                SendMessage(Count.ToString());
+            }
         }
     }
 }
